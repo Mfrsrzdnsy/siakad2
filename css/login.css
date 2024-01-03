@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    background-color: #222d32 !important;
+}
+
+.global-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #48e248;
+    
+}
+
+.login-form{
+    width: 330px;
+    height: 400px;
+    padding: 20px;
+    background-color: #222d32 !important;
+    color: rgb(0, 195, 255);
+    border-radius: 10px !important;
+    border-color: #222d32;
+}
+
+input[type="email"],
+input[type="password"]{
+    background: white;
+    border: 2px solid #00e5ff;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
