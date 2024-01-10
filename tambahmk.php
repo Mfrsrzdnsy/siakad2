@@ -9,7 +9,7 @@
     ?>
 
     <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title text-center">
             Tambah Mata Kuliah <br> Kartu Rencana Studi <br>
         </h5>
 
@@ -42,7 +42,7 @@
                     if ($row > 0) {
                        echo "<i class='fa fa-check'></i>";
                     } else {
-                        echo "<a href='inputkrs.php?kode_matkul=$dt[kode_matkul]&&nim=$b[nim]&&semester=$b[semester] '>Pilih</a>";
+                        echo "<a href='inputkrs.php?kode_matkul=$dt[kode_matkul]&&nim=$b[nim]&&semester=$b[semester]' style='text-decoration: none;' >Pilih</a>";
                     }
                     ?>
                    </td>

@@ -51,7 +51,7 @@
             
                         if ($b) {
                             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                            <strong>Berhasil!</strong> Data berhasil disimpan, <a href='?page=mahasiswa'>LIHAT DATA</a>.
+                            <strong>Berhasil!</strong> Data berhasil disimpan, <a href='?page=mahasiswa_profil' style='text-decoration: none;'>LIHAT DATA</a>.
                             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                             </div>";
                         } else {
@@ -68,7 +68,7 @@
             
                     if ($b) {
                         echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                              <strong>Berhasil!</strong> Data berhasil disimpan, <a href='?page=mahasiswa'>LIHAT DATA</a>.
+                              <strong>Berhasil!</strong> Data berhasil disimpan, <a href='?page=mahasiswa_profil' style='text-decoration: none;'>LIHAT DATA</a>.
                               <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                             </div>";
                     } else {

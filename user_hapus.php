@@ -1,9 +1,9 @@
 <?php
 if ($_SESSION['level'] == "admin") {
     include "koneksi.php";
-    if (isset($_GET['id_user'])) {
-        $id_user = $_GET['id_user'];
-        $hapus = "DELETE FROM user WHERE id_user = '$id_user'";
+    if (isset($_GET['email'])) {
+        $email = $_GET['email'];
+        $hapus = "DELETE FROM user WHERE email = '$email'";
         $qhapus = mysqli_query($koneksi, $hapus);
         if ($qhapus) {
             header("location:?page=user");

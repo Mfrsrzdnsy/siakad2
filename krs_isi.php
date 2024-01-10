@@ -2,8 +2,11 @@
     <div class="card-header text-bg-warning">
         SELAMAT DATANG
     </div>
+    
     <div class="card-body">
+
         <h5 class="card-title text-center">KARTU RENCANA STUDI</h5>
+        
         <table class="table table-hover">
 
 
@@ -73,27 +76,37 @@
                     } ?>
                 </tbody>
                 <tr>
-                    <th colspan="3">JUMLAH KHS</th>
-                    <th colspan="2">
+                    <th colspan="3">JUMLAH SKS</th>
+                    <th>
                         <?php
                         $sqlsks = "SELECT sum(sks) AS total FROM tblmatkul, khs WHERE tblmatkul.kode_matkul = khs.kode_matkul
                             AND khs.nim='$data[nim]' AND khs.semester = '$data[semester]'";
                         $qsks = mysqli_query($koneksi, $sqlsks);
                         $jumlah = mysqli_fetch_array($qsks);
-                        echo $jumlah['total'] . " SKS";
-                        $maksimal_sks = 24;  // Jumlah SKS maksimal yang diperbolehkan
-                            if ($jumlah['total'] < $maksimal_sks) {
-                                // Tampilkan formulir input mata kuliah
-                                echo '<a href="?page=tambahmk&&nim=' . $data['nim'] .'" class="btn btn-warning" style="margin-left: 10px;">Tambah</a>';
-                            } else {
-                                // Tampilkan pesan jika jumlah SKS sudah mencapai batas maksimal
-                                echo '<p class="text-danger">Anda sudah mencapai batas maksimal SKS yang dapat diambil (24 SKS).</p>';
-                            }
+                        echo $jumlah['total'];
                         ?>
+                    </th>
+
+                    <th>
+                        
                     </th>
                 </tr>
             </table>
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
+    <?php
+    $maksimal_sks = 24;  // Jumlah SKS maksimal yang diperbolehkan
+    if ($jumlah['total'] < $maksimal_sks) {
+        // Tampilkan formulir input mata kuliah
+        echo '<a href="?page=tambahmk&&nim=' . $data['nim'] .'" class="btn btn-warning" style="margin-right: 10px;">Tambah</a>';
+    } else {
+        // Tampilkan pesan jika jumlah SKS sudah mencapai batas maksimal
+        echo '<p class="text-danger">Anda sudah mencapai batas maksimal SKS yang dapat diambil (24 SKS).</p>';
+    }
+    ?>
+
+    <a href="cetak.php" class="btn btn-warning"><i class="fas fa-print"></i> Print</a>
+</div>
+
         </table>
-        <!-- <a href="?page=tambahmk&&nim=<?php echo $data['nim'];?>" class="btn btn-warning">Tambah Mata Kuliah</a> -->
     </div>
 </div>
