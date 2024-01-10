@@ -48,7 +48,7 @@
                 <tbody>
                     <?php
                     $sqlkrs = "SELECT * FROM tblmahasiswa, tblmatkul, khs WHERE tblmahasiswa.nim = khs.nim AND tblmatkul.kode_matkul = khs.kode_matkul
-                    AND khs.nim = '$data[nim]' ORDER BY tblmatkul.kode_matkul ASC";
+                    AND khs.nim = '$data[nim]' AND khs.semester = '$data[semester]' ORDER BY tblmatkul.kode_matkul ASC";
                 $qkrs = mysqli_query($koneksi, $sqlkrs);
                 
                 // Periksa apakah query berhasil atau tidak
@@ -65,7 +65,7 @@
                         <td> <?php echo $dt['kode_matkul'] ?> </td>
                         <td> <?php echo $dt['matkul'] ?> </td>
                         <td> <?php echo $dt['sks'] ?> </td>
-                        <td><a title="Hapus" class="btn btn-outline-danger" href="#"
+                        <td><a title="Hapus" class="btn btn-outline-danger" href="?page=krs_hapus&&nim=<?php echo $data['nim']; ?>&kode_matkul=<?php echo $dt['kode_matkul']; ?>"
                                 onclick="return confirm('Yakin menghapus data ini?')"><i class="fa-solid fa-trash"
                                     style="color: #df1616;"></i></a></td>
                     </tr>
@@ -81,11 +81,19 @@
                         $qsks = mysqli_query($koneksi, $sqlsks);
                         $jumlah = mysqli_fetch_array($qsks);
                         echo $jumlah['total'] . " SKS";
+                        $maksimal_sks = 24;  // Jumlah SKS maksimal yang diperbolehkan
+                            if ($jumlah['total'] < $maksimal_sks) {
+                                // Tampilkan formulir input mata kuliah
+                                echo '<a href="?page=tambahmk&&nim=' . $data['nim'] .'" class="btn btn-warning" style="margin-left: 10px;">Tambah</a>';
+                            } else {
+                                // Tampilkan pesan jika jumlah SKS sudah mencapai batas maksimal
+                                echo '<p class="text-danger">Anda sudah mencapai batas maksimal SKS yang dapat diambil (24 SKS).</p>';
+                            }
                         ?>
                     </th>
                 </tr>
             </table>
         </table>
-
+        <!-- <a href="?page=tambahmk&&nim=<?php echo $data['nim'];?>" class="btn btn-warning">Tambah Mata Kuliah</a> -->
     </div>
 </div>
