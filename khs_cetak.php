@@ -49,7 +49,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['level'])) {
 <body onload="javascript:window.print()">
     <div class="container-fluid">
         <div class="card">
-            <h5 class="card-title text-center"><b>KARTU RENCANA STUDI (KRS)</b></h5>
+            <h5 class="card-title text-center"><b>KARTU HASIL STUDI (KHS)</b></h5>
 
             <!-- Informasi Mahasiswa -->
             <table class="table table-borderless">
@@ -186,18 +186,20 @@ if (isset($_SESSION['email']) && isset($_SESSION['level'])) {
 
             <!-- Tanggal dan Tanda Tangan -->
             <div class="card-bottom">
-    <table class="text-center" style="width: 100%;">
+    <table class="" style="width: 100%;">
         <tr>
             <td class="dosen" style="width: 50%;">
-                <h6 style="margin-bottom: 80px;">Dosen Wali</h6>
-                <span><u><b>( Dr. Muhammad Multazam, S.Kom., M.Kom )</b></u></span><br>
-                <b>NIDN. 12345678910</b>
+            <h5><b><i>Keterangan :</i></b></h5>
+            <span><i>NM = Nilai Mutu</i></span><br>
+            <span><i>AM = Angka Mutu</i></span><br>
+            <span><i>IP = Index Prestasi</i></span>
             </td>
-            <td class="mahasiswa" style="width: 50%;">
+            <td class="rektor" style="width: 50%;">
                 <h6>Mataram, <?php echo date('d F Y') ?></h6>
-                <h6 style="margin-bottom: 80px;">Mahasiswa yang bersangkutan,</h6>
-                <span><u><b><?php echo $data['nama_mhs']; ?></b></u></span><br>
-                <span><b>NPM. <?php echo $data['nim']; ?></b></span>
+                <h6 >Universitas Teknologi Mataram</h6>
+                <h6 style="margin-bottom: 80px;">Rektor</h6>
+                <span><u><b> Ir.H.Lalu Darmawan Bakti, M.Sc., M.Kom </b></u></span><br>
+                <span><b>NIK. 001.03.99</b></span>
             </td>
         </tr>
     </table>
