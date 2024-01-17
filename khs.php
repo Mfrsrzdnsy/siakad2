@@ -138,7 +138,7 @@
         ?></span>
             </div>
             <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                    <button onclick="window.print();" href="cetak.php" class="btn btn-warning noPrint"><i class="fas fa-print"></i> Print</button>
+                    <a href="khs_cetak.php" class="btn btn-warning"><i class="fas fa-print"></i> Print</a>
             </div>
 
         </table>
