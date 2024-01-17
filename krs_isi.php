@@ -54,7 +54,6 @@
                     AND khs.nim = '$data[nim]' AND khs.semester = '$data[semester]' ORDER BY tblmatkul.kode_matkul ASC";
                 $qkrs = mysqli_query($koneksi, $sqlkrs);
                 
-                // Periksa apakah query berhasil atau tidak
                 if (!$qkrs) {
                     die("Query error: " . mysqli_error($koneksi));
                 }

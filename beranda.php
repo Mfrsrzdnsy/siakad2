@@ -73,6 +73,8 @@ if (isset($_SESSION['email']) and isset($_SESSION['level'])) {
                         Data Dosen</a>
                     <a href="?page=matkul" class="list-group-item list-group-item-action"> <i class="fas fa-server"></i>
                         Data Mata Kuliah</a>
+                        <a href="?page=mengajar" class="list-group-item list-group-item-action"><i class="fas fa-server"></i> Data
+                        Mengajar</a>
                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-server"></i> Data
                         Program Studi</a>
                     <?php } elseif ($_SESSION['level'] == "dosen") { ?>
@@ -80,7 +82,7 @@ if (isset($_SESSION['email']) and isset($_SESSION['level'])) {
                             class="far fa-address-card"></i> Update Profil</a>
                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-server"></i> Lihat
                         KRS</a>
-                    <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-inbox"></i> Input
+                    <a href="?page=dosen_mengajar" class="list-group-item list-group-item-action"><i class="fas fa-inbox"></i> Input
                         Nilai</a>
                     <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-calendar"></i> Jadwal
                         Mengajar</a>
