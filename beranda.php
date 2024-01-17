@@ -55,7 +55,7 @@ if (isset($_SESSION['email']) and isset($_SESSION['level'])) {
             </div>
         </nav><br>
         <div class="row">
-            <div class="col-md-3 mb-3">
+            <div class="col-md-3 mb-3 noPrint">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action bg-warning" aria-current="true">
                         <i class="fas fa-caret-down"></i> MENU UTAMA
@@ -91,7 +91,7 @@ if (isset($_SESSION['email']) and isset($_SESSION['level'])) {
                             class="far fa-address-card"></i> Update Profil</a>
                     <a href="?page=krs_isi" class="list-group-item list-group-item-action"><i class="fa fa-eye-dropper"></i> Isi
                         KRS</a>
-                    <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-eye"></i>
+                    <a href="?page=khs" class="list-group-item list-group-item-action"><i class="fa fa-eye"></i>
                         Lihat KHS</a>
                     <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-calendar-check"></i>
                         Jadwal
